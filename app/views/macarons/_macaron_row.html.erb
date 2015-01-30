@@ -1,0 +1,25 @@
+<li class="large-3 medium-4 small-12 column">
+  <div class="macaron-card padly">
+    <%= link_to macaron, class: "icon" do %>
+      <%= image_tag macaron.icon %>
+    <% end %>
+    <div class="macaron-info ell glassy-bg padmy padlx">
+      <div class="title">
+        <h6><%= macaron.name %></h6>
+      </div>
+      <p class="left price label macaron-label radius">Php <%= macaron.price %></p>
+
+        <br />
+        <br />
+        <%= form_for @order_item, remote: true do |f| %>
+        <div class="right radius">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="right radius">
+            <%= f.hidden_field :macaron_id, value: macaron.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+        <%end%>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,14 @@
+// Index page style
+.macarons-grid {
+  .macaron-card {
+    width:220px;
+    margin:auto;
+    .icon img {
+      height: 100px;
+      width:100%;
+    }
+    .macaron-info {
+      .name { height: 4em; }
+    }
+  }
+}

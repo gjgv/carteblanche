@@ -1,0 +1,8 @@
+<h4 class="column">Macarons on Sale</h4>
+<div class="column">
+  <ul class="macarons-grid no-bullet row">
+    <% @macarons.each do |macaron| %>
+      <%= render "macaron_row", macaron: macaron, order_item: @order_item %>
+    <% end %>
+  </ul>
+</div>

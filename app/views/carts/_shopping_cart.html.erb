@@ -1,0 +1,16 @@
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+  <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
+    <h4>My Cart</h4>
+    <% if @order_items.size == 0 %>
+      <p class="text-center">
+        There are no items in your shopping cart. Please <%= link_to "go back", root_path %> and add some items to your cart.
+      </p>
+    <% else %>
+      <p class="mb0"> You've selected <span class="cart-count"><%=@order_items.size%></span> macarons!</p>
+    <% end %>
+  </div>
+
+  <% @order_items.each do |order_item|%>
+    <%= render 'carts/cart_row', macaron: order_item.macaron, order_item: order_item, show_total: true %>
+  <%end%>
+</div>
