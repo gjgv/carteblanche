@@ -5,8 +5,13 @@ class ApplicationController < ActionController::Base
   helper_method :current_order
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
+    # if !session[:order_id].nil?
+    if !current_user.nil?
+      if !Order.find_by(user_id: current_user.id).nil?
+        Order.find_by user_id: current_user.id
+      else
+        Order.new
+      end
     else
       Order.new
     end

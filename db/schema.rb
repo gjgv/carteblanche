@@ -39,11 +39,14 @@ ActiveRecord::Schema.define(version: 20150130124841) do
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
+    t.integer  "user_id",                             null: false
     t.decimal  "subtotal",   precision: 12, scale: 3
     t.decimal  "total",      precision: 12, scale: 3
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
