@@ -15,8 +15,9 @@
         <div class="right radius">
           <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
           <div class="right radius">
+            <i class="fi-shopping-cart"></i>
             <%= f.hidden_field :macaron_id, value: macaron.id %>
-            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+            <%= f.submit "Add to Cart", class: "button" %>
           </div>
         </div>
         <%end%>
