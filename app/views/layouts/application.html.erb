@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
   <head>
     <%= javascript_include_tag "application" %>
     <meta charset="utf-8" />
@@ -7,6 +8,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Carte Blanche" %></title>
 
+    <%= include_gon %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -20,6 +22,14 @@
    
     <div id="main-content" class="row full-min-height">
       <%= yield %>
+    </div>
+    <div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+      <h2 class="mbs">New Transaction</h2>
+      <%= form_tag transactions_path do%>
+        <p>Please enter your payment details:</p>
+        <div id="dropin"></div>
+        <%=submit_tag "Pay #{current_user.subtotal}$", class: "button mt1" %>
+      <%end%>
     </div>
    
     <footer class="row">
