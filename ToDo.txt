@@ -1,0 +1,15 @@
+High Priority
+1 - Link Orders table with Users table
+	Tutorial version currently links Orders with the 'session'. See Application_Controller
+	Because of this, whenever we close the window, we also close the session. Therefore the existing order associated with it loses its link, and we cannot use it again (but it still exists in the database)
+
+2 - Limit the number of purchaseables with the 'stock' value of the Item
+	Currently, we can buy an unlimited number of macarons
+
+3 - Add checkout process
+
+Medium Priority
+1 - Edit the UI design of the Cart page
+
+Low Priority
+1 - Customize the overall CSS, change the color scheme, etc
