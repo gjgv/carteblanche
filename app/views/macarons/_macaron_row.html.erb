@@ -8,18 +8,25 @@
         <h6><%= macaron.name %></h6>
       </div>
       <p class="left price label macaron-label radius">Php <%= macaron.price %></p>
-
         <br />
         <br />
-        <%= form_for @order_item, remote: true do |f| %>
-        <div class="right radius">
-          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-          <div class="right radius">
-            <i class="fi-shopping-cart"></i>
-            <%= f.hidden_field :macaron_id, value: macaron.id %>
-            <%= f.submit "Add to Cart", class: "button" %>
-          </div>
-        </div>
+        <%if macaron.stock > 0%>
+        <p>Stocks available: <%= macaron.stock %></p>
+          <%if signed_in?%>
+            <%= form_for @order_item, remote: true do |f| %>
+            <div class="right radius">
+              <%= f.number_field :quantity, value: 1, class: "form-control", min: 1, max: macaron.stock %>
+              <div class="right radius">
+                <i class="fi-shopping-cart"></i>
+                <%= f.hidden_field :macaron_id, value: macaron.id %>
+                <%= f.submit "Add to Cart", class: "button" %>
+              </div>
+            </div>
+            <%end%>
+            <%else%>
+          <%end%>
+        <%else%>
+          <p>Out of Stock</p>
         <%end%>
     </div>
   </div>

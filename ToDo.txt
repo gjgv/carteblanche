@@ -1,17 +1,41 @@
 High Priority
-[X] 1 - Link Orders/Carts with the current_user
-	Tutorial version currently links Orders with the 'session'. See Application_Controller and Order_Items Controller
-	Because of this, whenever we close the window, we also close the session. Therefore the existing order associated with it loses its link, and we cannot use it again (but it still exists in the database)
+	[X] 1 - Fix the overcounting issue
 
-	UPDATE: Now implemented as of 6:40PM
+		UPDATE: Now implemented as of Feb 1, 12:50AM by GS
 
-[ ] 2 - Limit the number of purchaseables with the 'stock' value of the Item
-	Currently, we can buy an unlimited number of macarons
+	[X] 2 - Link Orders/Carts with the current_user
+		Tutorial version currently links Orders with the 'session'. See Application_Controller and Order_Items Controller
+		Because of this, whenever we close the window, we also close the session. Therefore the existing order associated with it loses its link, and we cannot use it again (but it still exists in the database)
 
-[ ] 3 - Add checkout process
+		UPDATE: Now implemented as of Feb 1, 6:40PM by GS
+
+	[X] 3 - Limit the number of purchaseables with the 'stock' value of the Item
+		[X] - Implement a max limit in the dropdown in the Index page
+		[X] - Implement a max limit in the dropdown in the Carts page
+		[X] - Show the number of stocks available
+		[X] - Show "Out of stock" if macaron.stock == 0
+
+		UPDATE: Now implemented as of Feb 1, 7:05PM by GS
+
+	[X] 4 - Do not show the add to cart feature if there's no current_user
+
+		UPDATE: Now implemented as of Feb 1, 7:05PM by GS
+
+	[ ] 5 - Add checkout process
+		[ ] - Add a mock credit card process
+		[ ] - Update stock value per purchased macaron once cart has been checked out
 
 Medium Priority
-[ ] 1 - Edit the UI design of the Cart page
+	[ ] 1 - Edit the UI design of the Cart page
+
+	[ ] 2 - Add the Order History Feature for the CS112 Optional Requirements
 
 Low Priority
-[ ] 1 - Customize the overall CSS, change the color scheme, etc
+	[ ] 1 - Customize the overall CSS, change the color scheme, etc
+		[ ] Edit overall Colors
+		[ ] Fix the UI design of the macaron_row
+		[ ] Find a way to move the shopping cart icon to the "Add to Cart" button itself
+
+	[ ] 2 - Add an Alert showing a "Added [order_item.quantity] pieces of [macaron.name] to the cart" in the index page
+		To aid the user if he/she bought a macaron in the bottom of the page.
+
