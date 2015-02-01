@@ -10,10 +10,10 @@ High Priority
 		UPDATE: Now implemented as of Feb 1, 6:40PM by GS
 
 	[X] 3 - Limit the number of purchaseables with the 'stock' value of the Item
-		[X] - Implement a max limit in the dropdown in the Index page
-		[X] - Implement a max limit in the dropdown in the Carts page
-		[X] - Show the number of stocks available
-		[X] - Show "Out of stock" if macaron.stock == 0
+		[X] Implement a max limit in the dropdown in the Index page
+		[X] Implement a max limit in the dropdown in the Carts page
+		[X] Show the number of stocks available
+		[X] Show "Out of stock" if macaron.stock == 0
 
 		UPDATE: Now implemented as of Feb 1, 7:05PM by GS
 
@@ -22,13 +22,19 @@ High Priority
 		UPDATE: Now implemented as of Feb 1, 7:05PM by GS
 
 	[ ] 5 - Add checkout process
-		[ ] - Add a mock credit card process
-		[ ] - Update stock value per purchased macaron once cart has been checked out
+		[ ] Add a mock credit card process
+		[ ] Update stock value per purchased macaron once cart has been checked out
 
 Medium Priority
 	[ ] 1 - Edit the UI design of the Cart page
 
 	[ ] 2 - Add the Order History Feature for the CS112 Optional Requirements
+
+	[X] 3 - Price Fixes
+		[X] Make the price in the index page have 2 decimal places
+		[X] Fix currency for the cart page ($) to Php (₱)
+
+		UPDATE: Now implemented as of Feb 1, 7:35PM by GS
 
 Low Priority
 	[ ] 1 - Customize the overall CSS, change the color scheme, etc

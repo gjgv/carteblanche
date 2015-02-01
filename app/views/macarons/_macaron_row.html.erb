@@ -7,7 +7,7 @@
       <div class="title">
         <h6><%= macaron.name %></h6>
       </div>
-      <p class="left price label macaron-label radius">Php <%= macaron.price %></p>
+      <p class="left price label macaron-label radius"> <%= number_to_currency(macaron.price, unit: "₱") %></p>
         <br />
         <br />
         <%if macaron.stock > 0%>

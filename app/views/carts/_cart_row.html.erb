@@ -1,3 +1,6 @@
+
+      <!-- Medium Priority #1: Fix CSS -->
+
 <div class="well">
 
   <div class="row">
@@ -5,9 +8,8 @@
       <h4><%= macaron.name %></h4>
     </div>
     <div class="col-xs-4">
-      
       <%= form_for order_item, remote: true do |f| %>
-        <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
+        <h4 class="text-right">Unit Price: <span style="color: primary-color"><%= number_to_currency(order_item.unit_price, unit: "₱") %></span></h4>
         <div class="row">
           <div class="col-xs-4">
             <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1, max: macaron.stock %>
@@ -20,7 +22,8 @@
             </div>
           </div>
         </div>
-        <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
+        <!-- Medium Priority #1: Fix CSS -->
+        <h4 class="text-right">Total Price: <span style="color: primary-color"><%= number_to_currency(order_item.unit_price, unit: "Php") %></span></h4>
       <% end %>
     </div>
     
