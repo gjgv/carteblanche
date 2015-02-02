@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
+
 private
   def update_subtotal
     self[:subtotal] = subtotal
